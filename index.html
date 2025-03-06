@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Comparison Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Data Comparison Tool</h1>
+
+        <!-- Input Data -->
+        <div class="input-container">
+            <div style="width: 100%;">
+                <label for="data1">Data 1 (One item per line):</label>
+                <textarea id="data1" placeholder="Example:
+1709241507L
+1910240638L
+1909242236L"></textarea>
+            </div>
+            <div style="width: 100%;">
+                <label for="data2">Data 2 (One item per line):</label>
+                <textarea id="data2" placeholder="Example:
+2802252228L
+2802252331L
+0103250920L"></textarea>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="primary" onclick="compareData()">
+                <i class="fas fa-exchange-alt"></i> Compare Data
+            </button>
+            <button class="secondary" onclick="clearInput()">
+                <i class="fas fa-eraser"></i> Clear Input
+            </button>
+            <button class="export" onclick="exportToCSV()">
+                <i class="fas fa-file-export"></i> Export to CSV
+            </button>
+            <button class="toggle-dark" onclick="toggleDarkMode()">
+                <i class="fas fa-moon"></i> Toggle Dark Mode
+            </button>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loader" id="loader"></div>
+
+        <!-- Message -->
+        <div id="message" class="message"></div>
+
+        <!-- Count Matches -->
+        <div id="countMatches" class="message"></div>
+
+        <!-- Result Table -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Data 1</th>
+                    <th>Data 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Comparison results will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
